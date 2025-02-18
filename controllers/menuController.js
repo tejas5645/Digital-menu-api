@@ -39,7 +39,7 @@ const getMenuByName = async (req, res) => {
     const { nm } = req.params
 
     try {
-        const checkMenu = await db.query('select * from menu_card where mname ilike $1', [`%${nm}%`]) //use ilike for case insesitivity
+        const checkMenu = await db.query('select mid,mname,fg_name,qtype,price from menu_card,food_group,qty where mname ilike $1 and  menu_card.mtype=food_group.fid and menu_card.mqty=qty.qid', [`%${nm}%`]) //use ilike for case insesitivity
         if (checkMenu.rows.length === 0) {
             return res.status(404).json({ message: "Not found" })
         }
