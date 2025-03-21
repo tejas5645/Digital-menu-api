@@ -1,11 +1,13 @@
 const pg = require('pg');
+require('dotenv').config();
+
 const pool = new pg.Pool({
 
-    user: 'postgres',
-    host: 'localhost',
-    database: 'DIGI_MENUCARD',		//database name
-    password: 'tejas',
-    port: 5432,			//default PostgreSQL port
+    user: process.env.DB_USER,
+    host: process.env.DB_HOST,
+    database: process.env.DB_NAME,		//database name
+    password: process.env.DB_PASSWORD,
+    port: process.env.DB_PORT,			//default PostgreSQL port
 
 });
 
