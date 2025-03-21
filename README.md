@@ -21,7 +21,8 @@ digital-menu-api/
 ├── server.js                 # Main server file  
 ├── db.js                     # Database connection file  
 ├── routes/                   # Route definitions  
-│   ├── menuRoutes.js  
+│   ├── adminRoutes.js  
+│   ├── menuRoutes.js
 │   ├── foodGroupRoutes.js  
 │   ├── quantityRoutes.js  
 ├── controllers/              # Controllers handle request logic  
