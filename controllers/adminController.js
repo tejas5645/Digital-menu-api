@@ -64,6 +64,7 @@ const logout = async (req, res) => {
     }
 };
 
+//Menu 
 const postMenu = async (req, res) => {
 
     try {
@@ -209,6 +210,7 @@ const deleteMenu = async (req, res) => {
 
 }
 
+//Food_group
 const postFoodgroup = async (req, res) => {
 
     try {
@@ -300,6 +302,7 @@ const deleteFoodgroup = async (req, res) => {
     }
 }
 
+//Quantity
 const postQuantity = async (req, res) => {
 
     try {
@@ -324,9 +327,6 @@ const postQuantity = async (req, res) => {
         else {
             return res.status(403).json({ message: "Unauthorized! Admins only, Please login to continue" });
         }
-
-
-
 
     } catch (err) {
         console.log(err.message)

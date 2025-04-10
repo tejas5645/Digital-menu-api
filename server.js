@@ -12,12 +12,6 @@ require('dotenv').config();
 const app = express()
 
 //Middlewares
-// app.use(cors({
-//     origin: '*',
-//     methods: ['GET', 'POST', 'PUT', 'DELETE'],
-//     allowedHeaders: ['Content-Type', 'Authorization']
-// }));
-
 
 app.use(cors({
     origin: "http://localhost:5173",  // Change '*' to your frontend URL
@@ -30,10 +24,10 @@ app.use(cors({
 
 app.use(
     session({
-      secret: process.env.SESSION_SECRET, // Change this to a secure key
+      secret: process.env.SESSION_SECRET, 
       resave: false,
       saveUninitialized: false,
-      cookie: { secure: false, httpOnly: true, maxAge: 1000 * 60 * 60 }, // 1-hour session
+      cookie: { secure: false, httpOnly: true, maxAge: 1000 * 60 * 60 }, 
     })
   );
 
@@ -42,7 +36,7 @@ app.use('/menu', menu)
 app.use('/food_group', food_group)
 app.use('/quantity', quantity)
 app.use('/admin', admin)
-app.use(cors({ origin: "http://localhost:5173", credentials: true })); // Allow frontend requests
+app.use(cors({ origin: "http://localhost:5173", credentials: true })); 
 
 
 
